@@ -1,5 +1,7 @@
 // https://www.acmicpc.net/problem/10807
 /*
+개수 세기
+
 총 N개의 정수가 주어졌을 때, 정수 v가 몇 개인지 구하는 프로그램을 작성하시오.
 
 입력값 파일 :  'example.txt' -> 백준 제출 시 :  '/dev/stdin'
