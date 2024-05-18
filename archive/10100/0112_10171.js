@@ -1,5 +1,7 @@
 // https://www.acmicpc.net/problem/10171
 /*
+고양이
+
 아래 예제와 같이 고양이를 출력하시오.
 
 입력값 파일 :  'example.txt' -> 백준 제출 시 :  '/dev/stdin'
