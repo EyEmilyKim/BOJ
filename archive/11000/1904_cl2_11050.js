@@ -45,7 +45,7 @@ console.log(result);
  * 이항계수 공식 
           n !
   nCr = ──────────
-        r!(n-1)!
+        r!(n-r)!
  * (참고)
   https://shoark7.github.io/programming/algorithm/3-ways-to-get-binomial-coefficients        
  */
