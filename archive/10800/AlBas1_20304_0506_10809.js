@@ -12,10 +12,26 @@ const path = process.platform === 'linux' ? '/dev/stdin' : 'example.txt';
 const input = require('fs').readFileSync(path).toString().trim();
 // console.log(input);
 
-//문제 로직
+//문제 로직 - 방법 1 : 알파벳 순서대로 idx 찾아 출력하기
 let list = [];
 for (i = 'a'.charCodeAt(0); i <= 'z'.charCodeAt(0); i++) {
   if (!input.includes(String.fromCharCode(i))) list.push(-1);
   else list.push(input.indexOf(String.fromCharCode(i)));
 }
 console.log(list.join(' '));
+
+// 문제 로직 - 방법 2 : 문자열 알파벳의 idx 맵 만들어놓고 알파벳 순회하며 출력하기
+// 첫 인덱스 맵
+const map = new Map();
+Array.from(input).forEach((i, idx) => {
+  if (!map.has(i)) map.set(i, idx);
+});
+// console.log(map);
+//Map(7) { 'b' => 0, 'a' => 1, 'e' => 2, 'k' => 3, 'j' => 4, 'o' => 5, 'n' => 7 }
+
+// 알파벳 순회하며 첫 인덱스 확인 & 출력
+const result = [];
+Array.from('abcdefghijklmnopqrstuvwxyz').forEach((i) => {
+  result.push(map.has(i) ? map.get(i) : -1);
+});
+console.log(result.join(' '));
