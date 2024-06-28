@@ -32,7 +32,7 @@ public class Main{
         else if(ope.equals("remove")) S &= ~(1 << num);
         else if(ope.equals("check")) {
           int flag = (S&(1 << num)) == 0? 0: 1;
-          sb.append(flag).append('\n');
+          sb.append(flag+"\n");
         }
         else if(ope.equals("toggle")) S ^= (1 << num);
       }
