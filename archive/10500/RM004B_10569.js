@@ -31,6 +31,3 @@ for (let i of input) {
   result.push(face);
 }
 console.log(result.join('\n'));
-
-// 실행시간 측정 종료
-console.timeEnd(`-----\n`);
