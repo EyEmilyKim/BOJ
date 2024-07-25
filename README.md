@@ -12,3 +12,7 @@
 - 사용 언어 : **JavaScript**(.js) 메인 + Java 8(.java) ...
 
 - **해결한 문제 일람**을 [노션](https://www.notion.so/BOJ-2c73d677fa8f4cb682739336490520bd)에 정리하고 있습니다.
+
+
+![mazandi profile](http://mazandi.herokuapp.com/api?handle=myue4555&theme=warm)
+[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=myue4555)](https://solved.ac/myue4555)
