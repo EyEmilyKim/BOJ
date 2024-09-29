@@ -18,7 +18,7 @@ const nums = input[1].split(' ').map(Number);
 
 // 문제 로직
 /**
- * 브루트 포스
+ * 브루트 포스, 백트래킹.
  * 규칙성이 잘 찾아지지 않아서, 범위가 적은 걸 보고 그냥 브루트 포스 답게
  조합 가능한 순열을 다 구해보고 그 중 가장 적절한 결과값을 찾기로.
  */
@@ -51,7 +51,7 @@ function getAllArr(arr) {
 }
 
 // 모든 순열 조회하며 최적의 결과값 찾는 함수
-function findBestX(arr) {
+function findBestY(arr) {
   let max = 0;
   for (let A of arr) {
     max = Math.max(max, fx(A, N));
@@ -66,5 +66,5 @@ function findBestX(arr) {
 }
 
 // 작업 수행
-const result = findBestX(getAllArr(nums));
+const result = findBestY(getAllArr(nums));
 console.log(result);
