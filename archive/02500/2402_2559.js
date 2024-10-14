@@ -22,3 +22,32 @@
 
 입력값 파일 :  'example.txt' -> 백준 제출 시 :  '/dev/stdin'
 */
+
+// 입력값 파싱
+const path = process.platform === 'linux' ? '/dev/stdin' : 'example.txt';
+const input = require('fs')
+  .readFileSync(path)
+  .toString()
+  .trim()
+  .split(/\r?\n/)
+  .map((i) => i.split(' ').map(Number));
+const [N, K] = input[0];
+const data = input[1];
+// console.log(N, K, data);
+
+// 문제 로직
+/**
+ * 누적합.
+ * 미리 전체 누적합을 구해두고, idx 별로 여분의 누적합 제하기
+ */
+
+const prefixSum = [0]; // 0~ idx 까지의 전체 누적합
+for (let i = 1; i <= N; i++) {
+  prefixSum[i] = prefixSum[i - 1] + data[i - 1];
+}
+
+let max = Number.MIN_SAFE_INTEGER;
+for (let i = K; i <= N; i++) {
+  max = Math.max(max, prefixSum[i] - prefixSum[i - K]);
+}
+console.log(max);
