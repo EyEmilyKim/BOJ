@@ -1,4 +1,4 @@
-// https://www.acmicpc.net/step/54
+// https://www.acmicpc.net/problem/20920
 /*
 영단어 암기는 괴로워
 
