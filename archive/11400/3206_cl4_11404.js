@@ -44,9 +44,7 @@ for (const [from, to, cost] of data) {
 for (let k = 1; k <= N; k++) {
   for (let f = 1; f <= N; f++) {
     for (let t = 1; t <= N; t++) {
-      if (dist[f][t] > dist[f][k] + dist[k][t]) {
-        dist[f][t] = dist[f][k] + dist[k][t];
-      }
+      dist[f][t] = Math.min(dist[f][t], dist[f][k] + dist[k][t]);
     }
   }
 }
