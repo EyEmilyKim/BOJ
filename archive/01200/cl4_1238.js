@@ -86,11 +86,16 @@ for (const [from, to, weight] of data) {
 // 기준점 to 각 노드 최소 비용 구하는 다익스트라 함수
 function dijkstra(start, link) {
   const pq = new PriorityQueue();
+  const visited = new Array(N + 1).fill(false);
   const dp = new Array(N + 1).fill(Infinity);
   dp[start] = 0;
   pq.enqueue([start, 0]);
+
   while (!pq.isEmpty()) {
     const [pqV, pqW] = pq.dequeue(); // 비용 적은 노드부터 꺼내서 처리
+    if (visited[pqV]) continue; // 이미 처리된 노드 pass
+    visited[pqV] = true;
+
     for (let [linkV, linkW] of link[pqV]) {
       const totalW = pqW + linkW;
       if (totalW < dp[linkV]) {
