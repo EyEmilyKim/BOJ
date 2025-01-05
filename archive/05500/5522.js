@@ -8,3 +8,15 @@ JOI군의 각 게임의 득점을 나타내는 정수가 주어졌을 때, JOI�
 
 입력값 파일 :  'example.txt' -> 백준 제출 시 :  '/dev/stdin'
 */
+
+// 입력값 파싱
+const path = process.platform === 'linux' ? '/dev/stdin' : './example.txt';
+const input = require('fs').readFileSync(path).toString().trim().split(/\r?\n/).map(Number);
+// console.log(input);
+
+// 문제 로직
+let sum = 0;
+for (let point of input) {
+  sum += point;
+}
+console.log(sum);
